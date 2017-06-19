@@ -1,6 +1,11 @@
+DROP DATABASE IF EXISTS grocery_store;
+CREATE DATABASE grocery_store;
+
+\c grocery_store;
+
 CREATE TABLE grocery_items (
-  id serial PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   name TEXT,
-  price FLOAT,
+  price DECIMAL,
   section TEXT
 );
