@@ -16,6 +16,12 @@ app.get("/subtract", function(req, res){
   res.send(String(subtraction))
 })
 
+app.get("/double/:number", function(req, res){
+  var number = Number(req.params.number)
+  var doubled = number * 2
+  res.send(String(doubled))
+})
+
 app.listen(3000, function(){
   console.log("Listening on Port 3000")
 })
