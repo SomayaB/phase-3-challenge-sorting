@@ -11,6 +11,10 @@ app.get("/add", function(req, res){
   res.send(String(addition))
 })
 
+app.get("/subtract", function(req, res){
+  var subtraction = Number(req.query.a) - Number(req.query.b)
+  res.send(String(subtraction))
+})
 
 app.listen(3000, function(){
   console.log("Listening on Port 3000")
