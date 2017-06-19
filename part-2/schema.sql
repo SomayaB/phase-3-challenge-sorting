@@ -17,7 +17,7 @@ CREATE TABLE shoppers (
 
 CREATE TABLE orders (
   order_id SERIAL PRIMARY KEY,
-  shopper_id INTEGER,
+  shopper_id INTEGER
 );
 
 
@@ -26,3 +26,8 @@ CREATE TABLE order_items (
   item_id INTEGER,
   quantity INTEGER
 );
+
+
+INSERT INTO shoppers(name)
+  VALUES
+  ('Alex'), ('Sophie'), ('Charlie'), ('Mary'), ('Tim');
