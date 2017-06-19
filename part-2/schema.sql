@@ -9,3 +9,20 @@ CREATE TABLE grocery_items (
   price DECIMAL,
   section TEXT
 );
+
+CREATE TABLE shoppers (
+  id SERIAL PRIMARY KEY,
+  name TEXT
+);
+
+CREATE TABLE orders (
+  order_id SERIAL PRIMARY KEY,
+  shopper_id INTEGER,
+);
+
+
+CREATE TABLE order_items (
+  order_id INTEGER,
+  item_id INTEGER,
+  quantity INTEGER
+);
