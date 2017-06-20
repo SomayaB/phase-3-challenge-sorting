@@ -22,3 +22,13 @@ function countItemsInSection(section) {
 function mostRecentOrders() {
   return db.any('SELECT id, order_date FROM orders ORDER BY order_date DESC LIMIT 10')
 }
+
+function lastShopperName() {
+  return db.any(
+    `SELECT shoppers.name FROM shoppers
+    INNER JOIN orders
+    ON shoppers.id = orders.shopper_id
+    ORDER BY order_date DESC
+    LIMIT 1`
+  )
+}
