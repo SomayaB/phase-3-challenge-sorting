@@ -41,3 +41,13 @@ function orderTotal(orderId) {
     WHERE orders.order_id = $1`
     , orderId)
 }
+
+module.exports = {
+	allItems,
+	itemsInSection,
+	cheapItems,
+	countItemsInSection,
+	mostRecentOrders,
+	lastShopperName,
+	orderTotal
+}
