@@ -18,3 +18,7 @@ function cheapItems() {
 function countItemsInSection(section) {
   return db.any('SELECT COUNT(section) AS number_of_items_in_section FROM grocery_items WHERE section = $1', section)
 }
+
+function mostRecentOrders() {
+  return db.any('SELECT id, order_date FROM orders ORDER BY order_date DESC LIMIT 10')
+}

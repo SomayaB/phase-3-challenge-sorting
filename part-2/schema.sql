@@ -20,9 +20,9 @@ CREATE TABLE shoppers (
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
+  order_date DATE,
   shopper_id INTEGER,
-  item_id INTEGER,
-  quantity INTEGER
+  item_id INTEGER
 );
 
 
@@ -34,6 +34,6 @@ INSERT INTO shoppers(name)
   VALUES
   ('Alex'), ('Sophie'), ('Charlie'), ('Mary'), ('Tim');
 
-INSERT INTO orders(shopper_id, item_id, quantity)
+INSERT INTO orders(order_date, shopper_id, item_id)
   VALUES
-  (1, 23, 2), (2, 16, 1), (3, 25, 5), (4, 30, 6), (5, 41, 2);
+  ('2017-01-01', 1, 23), ('2017-02-01', 2, 16), ('2017-03-01', 3, 25), ('2017-04-01', 4, 30), ('2017-05-01', 5, 41);
