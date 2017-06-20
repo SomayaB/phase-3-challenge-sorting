@@ -4,9 +4,13 @@ var db = pgp(connectionString)
 
 
 function allItems() {
-  db.any('SELECT * FROM grocery_items')
+  return db.any('SELECT * FROM grocery_items')
 }
 
 function itemsInSection(section) {
-  db.any('SELECT id, name FROM grocery_items WHERE section = $1', section)
+  return db.any('SELECT id, name FROM grocery_items WHERE section = $1', section)
+}
+
+function cheapItems() {
+  return db.any('SELECT id, price FROM grocery_items WHERE price < 10.00 ORDER BY price ASC')
 }
