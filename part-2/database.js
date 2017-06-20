@@ -32,3 +32,12 @@ function lastShopperName() {
     LIMIT 1`
   )
 }
+
+function orderTotal(orderId) {
+  return db.any(
+    `SELECT SUM(grocery_items.price) AS order_Total FROM grocery_items
+    INNER JOIN orders
+    ON grocery_items.id = orders.item_id
+    WHERE orders.order_id = $1`
+    , orderId)
+}
