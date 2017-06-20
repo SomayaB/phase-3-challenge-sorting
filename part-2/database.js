@@ -14,3 +14,7 @@ function itemsInSection(section) {
 function cheapItems() {
   return db.any('SELECT id, price FROM grocery_items WHERE price < 10.00 ORDER BY price ASC')
 }
+
+function countItemsInSection(section) {
+  return db.any('SELECT COUNT(section) AS number_of_items_in_section FROM grocery_items WHERE section = $1', section)
+}
