@@ -21,6 +21,8 @@ document.querySelector(".clearButton").addEventListener("click", function(){
   clear()
   cartItemCount = 0
   document.querySelector("#cart-item-count").textContent = '(' + cartItemCount + ')'
+  var cartTotal = 0
+  document.querySelector(".total").textContent = cartTotal
 })
 
 function clear() {
