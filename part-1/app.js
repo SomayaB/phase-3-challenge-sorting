@@ -2,6 +2,10 @@ var express = require("express")
 
 var app = express()
 
+app.get("/", function(req, res){
+  res.send('<h1>Simple Web App</h1> <h3>Available routes: /zero, /add, /substract, /double/:number</h3>')
+})
+
 app.get("/zero", function(req, res){
   res.send("0")
 })
