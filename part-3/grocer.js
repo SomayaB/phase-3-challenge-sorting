@@ -1,12 +1,15 @@
 
 var addToCartButtons = document.querySelectorAll('.addToCartBtn')
 var cartItemCount = 0
-
+var cartModalContent = document.querySelector(".cartModalContent")
+var items = document.querySelectorAll(".item-name")
 
 for(var i = 0; i < addToCartButtons.length; i++){
   addToCartButtons[i].addEventListener("click", function(){
-  cartItemCount++;
-  document.querySelector("#cart-item-count").textContent = '(' + cartItemCount + ')'
+    cartItemCount++
+    document.querySelector("#cart-item-count").textContent = '(' + cartItemCount + ')'
+    cartModalContent.appendChild(document.createElement('p')).textContent=this.parentNode.childNodes[1].textContent
+    cartModalContent.appendChild(document.createElement('li')).textContent=this.parentNode.childNodes[3].textContent
   })
 }
 
@@ -36,6 +39,3 @@ window.addEventListener("click", function(event){
       cartModal.style.display = "none";
   }
 })
-
-
-//when add to cart is clicked, add textcontent of the item clicked to li inside cartModal div (this will be hidden until modal is opened)
