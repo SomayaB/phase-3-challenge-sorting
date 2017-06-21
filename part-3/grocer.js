@@ -35,13 +35,13 @@ var cartModal = document.querySelector('.cartModal')
 
 var cartButton = document.querySelector('#cart-button')
 
-var span = document.querySelector(".close")
+var close = document.querySelector(".close")
 
 cartButton.addEventListener("click", function(){
   cartModal.style.display = "block"
 })
 
-span.addEventListener("click", function(){
+close.addEventListener("click", function(){
   cartModal.style.display = "none"
 })
 
