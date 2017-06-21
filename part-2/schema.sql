@@ -26,10 +26,6 @@ CREATE TABLE orders (
 );
 
 
--- SELECT * FROM grocery_items
---   JOIN orders
---   ON grocery_items.id = orders.item_id
-
 INSERT INTO shoppers(name)
   VALUES
   ('Alex'), ('Sophie'), ('Charlie'), ('Mary'), ('Tim');
