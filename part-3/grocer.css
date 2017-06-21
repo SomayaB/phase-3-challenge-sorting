@@ -150,5 +150,9 @@ body {
 }
 
 .clearButton {
-  margin: 20px;
+  margin-top: 20px;
+}
+
+.cartTotal {
+  margin-top: 40px;
 }
