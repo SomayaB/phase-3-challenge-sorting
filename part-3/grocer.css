@@ -148,3 +148,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+.clearButton {
+  margin: 20px;
+}
