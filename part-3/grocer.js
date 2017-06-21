@@ -17,19 +17,6 @@ for(var i = 0; i < addToCartButtons.length; i++){
   })
 }
 
-document.querySelector(".clearButton").addEventListener("click", function(){
-  clear()
-  cartItemCount = 0
-  document.querySelector("#cart-item-count").textContent = '(' + cartItemCount + ')'
-  var cartTotal = 0
-  document.querySelector(".total").textContent = cartTotal
-})
-
-function clear() {
-  cartModalContent.parentNode.removeChild(cartModalContent)
-  console.log(cartModalContent)
-}
-
 
 var cartModal = document.querySelector('.cartModal')
 
@@ -50,3 +37,16 @@ window.addEventListener("click", function(event){
       cartModal.style.display = "none"
   }
 })
+
+
+document.querySelector(".clearButton").addEventListener("click", function(){
+  clear()
+  cartItemCount = 0
+  document.querySelector("#cart-item-count").textContent = '(' + cartItemCount + ')'
+  var cartTotal = 0
+  document.querySelector(".total").textContent = cartTotal
+})
+
+function clear() {
+  cartModalContent.parentNode.removeChild(cartModalContent)
+}
