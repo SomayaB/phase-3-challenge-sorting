@@ -1,15 +1,15 @@
 
 var addToCartButtons = document.querySelectorAll('.addToCartBtn')
 var cartItemCount = 0
-var cartModalContent = document.querySelector(".cartModalContent div")
+var shoppingList = document.querySelector(".shoppingList")
 var cartTotal = 0
 
 for(var i = 0; i < addToCartButtons.length; i++){
   addToCartButtons[i].addEventListener("click", function(){
     cartItemCount++
     document.querySelector("#cart-item-count").textContent = '(' + cartItemCount + ')'
-    cartModalContent.appendChild(document.createElement('p')).textContent=this.parentNode.childNodes[1].textContent
-    cartModalContent.appendChild(document.createElement('li')).textContent=this.parentNode.childNodes[3].textContent
+    shoppingList.appendChild(document.createElement('p')).textContent=this.parentNode.childNodes[1].textContent
+    shoppingList.appendChild(document.createElement('li')).textContent=this.parentNode.childNodes[3].textContent
 
     var price = Math.round(Number((this.parentNode.childNodes[3].textContent).replace(/[^0-9\.]+/g,"")) * 100) / 100
     cartTotal += price
@@ -19,9 +19,7 @@ for(var i = 0; i < addToCartButtons.length; i++){
 
 
 var cartModal = document.querySelector('.cartModal')
-
 var cartButton = document.querySelector('#cart-button')
-
 var close = document.querySelector(".close")
 
 cartButton.addEventListener("click", function(){
@@ -34,7 +32,7 @@ close.addEventListener("click", function(){
 
 window.addEventListener("click", function(event){
   if (event.target == cartModal) {
-      cartModal.style.display = "none"
+    cartModal.style.display = "none"
   }
 })
 
@@ -48,5 +46,5 @@ document.querySelector(".clearButton").addEventListener("click", function(){
 })
 
 function clear() {
-  cartModalContent.parentNode.removeChild(cartModalContent)
+  shoppingList.parentNode.removeChild(shoppingList)
 }
