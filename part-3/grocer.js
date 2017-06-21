@@ -26,27 +26,27 @@ document.querySelector(".clearButton").addEventListener("click", function(){
 })
 
 function clear() {
-  cartModalContent.parentNode.removeChild(cartModalContent);
+  cartModalContent.parentNode.removeChild(cartModalContent)
   console.log(cartModalContent)
 }
 
 
-var cartModal = document.querySelector('.cartModal');
+var cartModal = document.querySelector('.cartModal')
 
-var cartButton = document.querySelector('#cart-button');
+var cartButton = document.querySelector('#cart-button')
 
-var span = document.querySelector(".close");
+var span = document.querySelector(".close")
 
 cartButton.addEventListener("click", function(){
-  cartModal.style.display = "block";
+  cartModal.style.display = "block"
 })
 
 span.addEventListener("click", function(){
-  cartModal.style.display = "none";
+  cartModal.style.display = "none"
 })
 
 window.addEventListener("click", function(event){
   if (event.target == cartModal) {
-      cartModal.style.display = "none";
+      cartModal.style.display = "none"
   }
 })
